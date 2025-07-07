@@ -3,7 +3,7 @@
 Here is a guide of how to set up the development environment in OpenSupports.
 
 ## Requirements
-* PHP 5.6+
+* PHP 8.0+
 * MySQL 4.1+
 
 ### Getting up and running FRONT-END (client folder)

@@ -1,9 +1,9 @@
-FROM fauria/lamp
+FROM php:8.3-apache
 MAINTAINER Ivan Diaz <ivan@opensupports.com>
 
 RUN apt-get update && \
-    apt-get install zip unzip php7.0-zip php7.0-mbstring -y && \
-    apt-get remove --yes php7.0-snmp && \
+    apt-get install -y zip unzip libzip-dev && \
+    docker-php-ext-install mysqli pdo_mysql mbstring zip imap && \
     (curl -s https://getcomposer.org/installer | php) && \
     mv composer.phar /usr/local/bin/composer
 
