@@ -16,5 +16,10 @@
     },
     "autoload":{
         "classmap": ["libs/", "models/", "controllers/", "data/"]
+    },
+    "config":{
+        "platform":{
+            "php":"7.4.0"
+        }
     }
 }

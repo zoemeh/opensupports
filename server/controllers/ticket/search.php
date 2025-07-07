@@ -163,8 +163,9 @@ class SearchController extends Controller {
         $query = "SELECT ticket.id " . $query;
 
         $this->setQueryOrder($inputs, $order);
-        $inputs['page'] ?  $page =  $inputs['page'] : $page  = 1 ;
-        $query .= $order . ' LIMIT ' . $inputs['pageSize'] . ' OFFSET ' . ($page-1)*10;
+        $page = isset($inputs['page']) ? $inputs['page'] : 1;
+        $pageSize = isset($inputs['pageSize']) ? $inputs['pageSize'] : 10;
+        $query .= $order . ' LIMIT ' . $pageSize . ' OFFSET ' . ($page-1) * $pageSize;
 
         return $query;
     }
